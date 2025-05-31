@@ -1,0 +1,107 @@
+.my-data-modal {
+  font-size: 14px;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  //transition: all .5s;
+  &.modal-scroll {
+    top: 20%;
+    .modal-dialog,
+    &.slide-enter-active {
+      top: 20%;
+    }
+  }
+  &.slide-enter-active {
+    top: 15%;
+  }
+  &.slide-enter,
+  &.slide-leave-active {
+    top: -100%;
+  }
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999;
+    filter: alpha(Opacity=75);
+    -moz-opacity: .75;
+    opacity: .75;
+  }
+  .modal-dialog {
+    line-height: 1.5;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    height: auto;
+    // max-height: 600px;
+    min-height: 190px;
+    overflow-y: hidden;
+    z-index: 10000;
+    transform: translate(-50%, -40%);
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    .modal-header,
+    .modal-footer {
+      background-color:  #fff;
+    }
+    .modal-header {
+      position: relative;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      .title {
+        color: #333;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: PingFangSC-Semibold;
+      }
+      .close {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        right: 0;
+        font-size: 15px;
+        color: #999;
+        //background: url("./img/close.png") no-repeat center;
+        //background-size: contain;
+        cursor: pointer;
+      }
+    }
+    .modal-body {
+      overflow-y: auto;
+      //max-height: 500px;
+      padding: 0 10px 0 0;
+      margin-bottom: 25px;
+    }
+    .modal-footer {
+      // margin-top: 75px;
+      height: 50px;
+      line-height: 50px;
+      text-align: right;
+      .btn-group {
+        button {
+          min-width: 80px;
+          padding: 10px 15px;
+          font-size: 12px;
+          border-radius: 3px;
+          margin-right: 20px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        button:last-of-type{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
